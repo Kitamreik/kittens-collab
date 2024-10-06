@@ -35,7 +35,39 @@ var ip = "8.8.8.8";
                $("body").append("<pre>"+ JSON.stringify(data,"",2)+"</pre>");
            }
        });
-    });
+});
+
+//check to see if DOM is rendering
+function domLogger() {
+    console.info("DOM loaded");
+  }
+  
+  if (document.readyState === "loading") {
+    // Loading hasn't finished yet
+    document.addEventListener("DOMContentLoaded", domLogger);
+  } else {
+    // `DOMContentLoaded` has already fired
+    domLogger();
+  }
+
+//Use ipify to get the user's IP
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("Fetching API...")
+    // Fetch the IP address from the API
+    fetch("https://api.ipify.org?format=json")
+        .then(response => response.json())
+        .then(data => {
+            // Display the IP address on the screen
+            document.getElementById("ip-address").textContent = data.ip;
+        })
+        .catch(error => {
+            console.error("Error fetching IP address:", error);
+        });
+    console.log("DOM fully loaded and parsed");
+});
+//DOMContentLoaded: https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event
+
+
 
 //Doc: https://leafletjs.com/examples/quick-start/
 // Tile Layer Attribution: https://operations.osmfoundation.org/policies/tiles/
