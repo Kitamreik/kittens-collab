@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
   
   <title>Frontend Mentor | IP Address Tracker</title>
 
@@ -14,6 +15,12 @@
     .attribution a { color: hsl(228, 45%, 44%); }
     #map { height: 500px; }
   </style>
+  <link href="./public/css/styles.css" rel="stylesheet" />
+
+  <!-- Google Fonts and Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://kit.fontawesome.com/032df15d1f.js" crossorigin="anonymous"></script>
 
   <!-- Leaflet JS documentation -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -32,6 +39,40 @@
 
 </head>
 <body>
+  <!--  DO NOT TOUCH -->
+  <header class="link-styling-header">
+    <div class="header-wrapper">
+        <nav class="nav-bar link-styling open-sesame"> 
+            <ul class="left-text-line-items">
+                <button class="nav-button link-styling">
+                    <a href="/" role="button" type="submit">Page Name</a>
+                </button>
+                <button class="nav-button link-styling">
+                  <a href="/" role="button" type="submit">Page Name</a>
+                </button>
+               <button class="nav-button link-styling">
+                <a href="/" role="button" type="submit">Page Name</a>
+              </button>           
+               <button class="nav-button link-styling icons">
+                    <!-- dark mode button -->
+                    <a href="#" role="button" id="theme-switcher" >
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Dark Mode
+                    </a>
+                </button>
+            </ul>
+        </nav>
+        <!-- nav bar have all links side by side - desktop/tablet media query -->
+        
+        <div class = "link-styling mobile-container">
+            <button class = "hamburger">
+                <a href="javascript:void(0);" class="menu" for="open-sesame">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </button> 
+        </div>
+    </div>
+  </header>
   <!-- heading -->
   IP Address Tracker
 
@@ -65,9 +106,36 @@
     </address>
   </div>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Kit's Kittens</a>.
-  </div>
+  
+  <!-- DO NOT TOUCH -->
+<footer class = "link-styling-footer bold"> 
+  <section> 
+      <div > 
+          <div>
+              <h2 class = "mini-container">Developer Contact Info</h2>
+              <p class ="center-text-paragraph">A Product of CodeSquad</p>
+              <ul class="center-text-line-items link-styling">
+                  <li><a href="https://codesquad.org" target="'_blank"><img src="/img/CodeSquad-website-logo.png" alt="CodeSquad.org Logo"></a></li>
+                  <li><a href="https://github.com/Kitamreik/kittens-collab">
+                      <i class="fa-brands fa-github-alt"></i>
+                  </a></li>
+                  <li>Developers: Kit Fenrir Amreik (they/she), et al</li>
+                  <li>Email: kitdamreik@gmail.com, et al</li>
+              </ul>
+          </div>
+          <div class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+            Coded by <a href="#">Kit's Kittens</a>.
+          </div>
+          <!-- button placement -->
+          <div>
+              <button onclick="topFunction()" id="scroll-button" class= "scroll-button">
+                  Back to Top
+                  <i class="fa-regular fa-circle-up"></i>
+              </button>
+          </div>
+      </div>
+  </section>
+</footer>
 </body>
 </html>
